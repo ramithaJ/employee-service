@@ -1,1 +1,4 @@
-name:
+spring:
+  application:
+    name: employee-service
+name: Ramitha
