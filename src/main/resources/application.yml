@@ -9,3 +9,5 @@ spring:
 
 
 name: Ramitha
+bean:
+  message: Hello1234
