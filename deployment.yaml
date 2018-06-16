@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: employee-service
+  labels:
+    app: employee-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employee-service
+  template:
+    metadata:
+      labels:
+        app: employee-service
+    spec:
+      containers:
+        - name: employee-service
+          image: jayasekara84/employee-poc:latest
+#          volumeMounts:
+#          - name: config-volume
+#            mountPath: /etc/config
+          ports:
+              - containerPort: 8080
+#      volumes:
+#        - name: config-volume
+#          configMap:
+#              name: employeeservice
+#              items:
+#               - key: application.properties
+#                 path: application.properties
+
