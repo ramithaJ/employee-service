@@ -1,6 +1,0 @@
-spring.application.name=employee-service
-spring.cloud.kubernetes.reload.enabled=true
-spring.cloud.kubernetes.reload.period=10000
-employee.type=
-bean.message=Hello1234
-name=Ramitha
