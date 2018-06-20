@@ -19,6 +19,10 @@ public class EmployeeResource {
     @Autowired
     private Config config;
 
+
+    @Value("${userusername}")
+    private String userName;
+
     @RequestMapping(path = "/employee", method = RequestMethod.GET)
     public ResponseEntity<Employee> getEmployee(){
 
