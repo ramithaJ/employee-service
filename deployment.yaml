@@ -17,6 +17,11 @@ spec:
       containers:
         - name: employee-service
           image: jayasekara84/employee-poc:latest
+      - env:
+        - name: JAVA_APP_DIR
+          value: /deployments
+        - name: JAVA_OPTIONS
+          value: -Dspring.profiles.active=dev
 #          volumeMounts:
 #          - name: config-volume
 #            mountPath: /etc/config
