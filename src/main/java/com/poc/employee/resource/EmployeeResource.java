@@ -30,6 +30,8 @@ public class EmployeeResource {
 
         System.out.println(config.getMessage());
 
+        System.out.println(name);
+
         return  new ResponseEntity<Employee>(employee,HttpStatus.OK);
     }
 }
