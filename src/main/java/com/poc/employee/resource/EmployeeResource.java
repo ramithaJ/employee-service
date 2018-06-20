@@ -20,7 +20,7 @@ public class EmployeeResource {
     private Config config;
 
 
-    @Value("${userusername}")
+    @Value("${username}")
     private String userName;
 
     @RequestMapping(path = "/employee", method = RequestMethod.GET)
@@ -31,6 +31,7 @@ public class EmployeeResource {
         employee.setName(config.getMessage());
 
         System.out.println(config.getMessage());
+        System.out.println(userName);
 
         return  new ResponseEntity<Employee>(employee,HttpStatus.OK);
     }
