@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("v1")
 public class EmployeeResource {
 
-    @Value("${name}")
-    private  String name;
 
     @Autowired
     private Config config;
@@ -29,8 +27,6 @@ public class EmployeeResource {
         employee.setName(config.getMessage());
 
         System.out.println(config.getMessage());
-
-        System.out.println(name);
 
         return  new ResponseEntity<Employee>(employee,HttpStatus.OK);
     }
