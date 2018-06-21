@@ -14,30 +14,30 @@ spec:
       labels:
         app: employee-service
     spec:
-      volumes:
-        - name: "employee-service"
-          secret:
-                  # The secret must be created before deploying this application
-            secretName: "employee-service"
+#      volumes:
+#        - name: "employee-service"
+#          secret:
+#                  # The secret must be created before deploying this application
+#            secretName: "employee-service"
       containers:
         - name: employee-service
           image: jayasekara84/employee-poc:latest
           ports:
              - containerPort: 8080
-          volumeMounts:
-            - name: "employee-service"
-              mountPath: "/etc/secret/employee-service"
-              readOnly: true
-#          env:
-#          - name: DB_USERNAME
-#            valueFrom:
-#              secretKeyRef:
-#                name: employee-service
-#                key: username
-#          - name: JAVA_OPTIONS
-#            value: -Dspring.profiles.active=dev
-#          - name: PROFILE
-#            value: DEV
+#          volumeMounts:
+#            - name: "employee-service"
+#              mountPath: "/etc/secret/employee-service"
+#              readOnly: true
+          env:
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: employee-service
+                key: username
+          - name: JAVA_OPTIONS
+            value: -Dspring.profiles.active=dev
+          - name: PROFILE
+            value: DEV
 #      volumes:
 #        - name: secret
 #          secret:
