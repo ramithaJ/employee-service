@@ -18,7 +18,7 @@ spec:
         - name: "employee-service"
           secret:
                   # The secret must be created before deploying this application
-          secretName: "employee-service"
+            secretName: "employee-service"
       containers:
         - name: employee-service
           image: jayasekara84/employee-poc:latest
