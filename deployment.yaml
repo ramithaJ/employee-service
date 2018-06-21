@@ -25,6 +25,8 @@ spec:
               secretKeyRef:
                 name: employee-service
                 key: username
+          - name: JAVA_OPTIONS
+            value: -Dspring.profiles.active=dev
         #      volumes:
 #        - name: config-volume
 #          configMap:
