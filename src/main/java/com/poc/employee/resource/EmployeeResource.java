@@ -23,6 +23,11 @@ public class EmployeeResource {
     @Value("${username}")
     private String userName;
 
+
+    @Value("${password}")
+    private String password;
+
+
     @RequestMapping(path = "/employee", method = RequestMethod.GET)
     public ResponseEntity<Employee> getEmployee(){
 
@@ -32,7 +37,8 @@ public class EmployeeResource {
 
         System.out.println(config.getMessage());
 
-        System.out.println("from property " + userName);
+        System.out.println(" user name from  secret " + userName);
+        System.out.println(" password from  secret " + password);
 
 
         return  new ResponseEntity<Employee>(employee,HttpStatus.OK);

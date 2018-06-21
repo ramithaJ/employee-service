@@ -29,11 +29,16 @@ spec:
 #              mountPath: "/etc/secret/employee-service"
 #              readOnly: true
           env:
-          - name: DB_USERNAME
+          - name: USER_NAME
             valueFrom:
               secretKeyRef:
                 name: employee-service
                 key: username
+          - name: PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: employee-service
+                key: password
           - name: JAVA_OPTIONS
             value: -Dspring.profiles.active=dev
           - name: PROFILE
