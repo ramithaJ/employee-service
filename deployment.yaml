@@ -27,6 +27,8 @@ spec:
                 key: username
           - name: JAVA_OPTIONS
             value: -Dspring.profiles.active=dev
+          - name: PROFILE
+            value: DEV
         #      volumes:
 #        - name: config-volume
 #          configMap:
