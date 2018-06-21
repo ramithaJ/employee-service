@@ -18,8 +18,14 @@ spec:
         - name: employee-service
           image: jayasekara84/employee-poc:latest
           ports:
-              - containerPort: 8080
-#      volumes:
+             - containerPort: 8080
+          env:
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: employee-service
+                key: username
+        #      volumes:
 #        - name: config-volume
 #          configMap:
 #              name: employeeservice

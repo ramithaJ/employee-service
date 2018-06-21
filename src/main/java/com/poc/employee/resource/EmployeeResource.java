@@ -32,7 +32,8 @@ public class EmployeeResource {
 
         System.out.println(config.getMessage());
 
-        System.out.println(userName);
+        System.out.println("from property " +userName);
+
 
         return  new ResponseEntity<Employee>(employee,HttpStatus.OK);
     }
